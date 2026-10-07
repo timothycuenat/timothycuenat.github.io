@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#09090b" />
+    <meta name="description" content="Politique de confidentialité de l’extension MyBox, au regard du RGPD et de la LPD suisse." />
+    <title>Politique de confidentialité · MyBox</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://timothycuenat.github.io/mybox/" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #09090b;
+        --fg: #fafafa;
+        --muted: #a1a1aa;
+        --copper: #cc8553;
+        --copper-soft: #e4c4a4;
+        --line: rgba(255, 255, 255, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      html[data-lang="fr"] [data-lang="en"],
+      html[data-lang="fr"] [data-lang="de"],
+      html[data-lang="en"] [data-lang="fr"],
+      html[data-lang="en"] [data-lang="de"],
+      html[data-lang="de"] [data-lang="fr"],
+      html[data-lang="de"] [data-lang="en"] {
+        display: none;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 1.0625rem;
+        line-height: 1.65;
+        text-wrap: pretty;
+      }
+
+      .glow {
+        position: fixed;
+        top: -8rem;
+        left: -6rem;
+        width: 36rem;
+        height: 28rem;
+        background: radial-gradient(circle at 40% 40%, rgba(201, 132, 88, 0.28), transparent 68%);
+        pointer-events: none;
+      }
+
+      .wrap {
+        position: relative;
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 3.5rem 1.5rem 5.5rem;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.85rem 1.25rem;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        min-width: 0;
+      }
+
+      .brand svg {
+        width: 2.75rem;
+        height: 2.75rem;
+        flex: none;
+        filter: drop-shadow(0 8px 18px rgba(201, 132, 88, 0.22));
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 1.05rem;
+        letter-spacing: -0.03em;
+        font-weight: 650;
+      }
+
+      .brand span {
+        display: block;
+        margin-top: 0.05rem;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      nav {
+        margin-left: auto;
+        display: flex;
+        gap: 0.15rem;
+      }
+
+      nav button {
+        appearance: none;
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        font: inherit;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        padding: 0.35rem 0.45rem;
+        border-radius: 0.4rem;
+        cursor: pointer;
+      }
+
+      nav button[aria-current="true"] {
+        color: var(--copper-soft);
+      }
+
+      nav button:focus-visible,
+      a:focus-visible {
+        outline: 2px solid var(--copper);
+        outline-offset: 3px;
+      }
+
+      h1 {
+        margin: 3.25rem 0 0.85rem;
+        font-size: clamp(2rem, 5vw, 2.6rem);
+        line-height: 1.12;
+        letter-spacing: -0.035em;
+        font-weight: 640;
+      }
+
+      .date {
+        margin: 0 0 1.25rem;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .lede {
+        margin: 0;
+        color: #d4d4d8;
+        font-size: 1.12rem;
+        line-height: 1.55;
+      }
+
+      h2 {
+        margin: 2.8rem 0 0.65rem;
+        color: var(--copper-soft);
+        font-size: 0.78rem;
+        font-weight: 650;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      p { margin: 0.75rem 0 0; }
+
+      ul {
+        margin: 0.85rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        position: relative;
+        margin: 0.45rem 0;
+        padding-left: 1rem;
+      }
+
+      li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.78em;
+        width: 0.45rem;
+        height: 1px;
+        background: var(--copper);
+      }
+
+      a {
+        color: var(--copper-soft);
+        text-underline-offset: 0.18em;
+      }
+
+      footer {
+        margin-top: 3.2rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+    </style>
+    <script>
+      (function () {
+        var lang = (location.hash || "#fr").slice(1);
+        if (lang !== "en" && lang !== "de") lang = "fr";
+        document.documentElement.lang = lang;
+        document.documentElement.dataset.lang = lang;
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250" aria-hidden="true">
+            <defs>
+              <linearGradient id="g" x1="201.21" y1="256.99" x2="48.79" y2="-6.99" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#af643f" />
+                <stop offset="0.5" stop-color="#cc8553" />
+                <stop offset="1" stop-color="#cfa075" />
+              </linearGradient>
+            </defs>
+            <rect width="250" height="250" rx="50" fill="url(#g)" />
+            <rect x="37.5" y="37.5" width="175" height="175" rx="35" fill="#fff" opacity="0.45" />
+            <path fill="#fff" fill-opacity="0.68" d="M177.5 37.5c19.25 0 35 15.75 35 35v105c0 19.25-15.75 35-35 35h-105c-19.25 0-35-15.75-35-35v-105c0-19.25 15.75-35 35-35h105m0-5h-105c-22.06 0-40 17.94-40 40v105c0 22.06 17.94 40 40 40h105c22.06 0 40-17.94 40-40v-105c0-22.06-17.94-40-40-40z" />
+          </svg>
+          <div>
+            <strong>MyBox</strong>
+            <span data-lang="fr">Politique de confidentialité</span>
+            <span data-lang="en">Privacy policy</span>
+            <span data-lang="de">Datenschutzerklärung</span>
+          </div>
+        </div>
+        <nav aria-label="Language">
+          <button type="button" data-set="fr">FR</button>
+          <button type="button" data-set="en">EN</button>
+          <button type="button" data-set="de">DE</button>
+        </nav>
+      </header>
+
+      <article data-lang="fr" data-title="Politique de confidentialité · MyBox">
+        <h1>Politique de confidentialité</h1>
+        <p class="date">Mise à jour le 7 octobre 2026</p>
+        <p class="lede">Cette politique décrit les traitements de données liés à l’extension MyBox pour Chrome et Firefox, et à la présente page. Elle est rédigée pour le règlement général sur la protection des données (RGPD) et pour la loi fédérale suisse sur la protection des données (LPD).</p>
+
+        <h2>1. Responsable du traitement</h2>
+        <p>Le responsable du traitement est Timothy Cuenat, joignable à <a href="mailto:apps@cuenat.swiss">apps@cuenat.swiss</a>.</p>
+        <p>Aucun délégué à la protection des données n’est désigné : les conditions de l’article 37 du RGPD ne sont pas réunies. Aucun représentant dans l’Union européenne n’est désigné. Toute demande s’adresse à l’adresse ci-dessus.</p>
+        <p>MyBox n’exploite pas de serveur. Le responsable n’a pas accès aux pages consultées, aux tickets, aux clés API ni à l’historique.</p>
+
+        <h2>2. Champ d’application</h2>
+        <p>Cette politique couvre l’extension et cette page. Elle ne couvre pas les sites consultés, Freshservice, ni les fournisseurs d’IA : chacun publie sa propre politique.</p>
+
+        <h2>3. Données traitées</h2>
+        <p>Selon l’usage, l’extension traite :</p>
+        <ul>
+          <li>le message saisi ;</li>
+          <li>le titre, l’adresse et le texte de la page ouverte ;</li>
+          <li>un passage ajouté par l’utilisateur ;</li>
+          <li>sur Freshservice, les champs de ticket laissés actifs, qui peuvent comprendre un nom, une adresse électronique et le contenu d’échanges ;</li>
+          <li>les images et fichiers joints ;</li>
+          <li>les consignes rédigées pour un site ;</li>
+          <li>la clé API du fournisseur choisi ;</li>
+          <li>l’historique des conversations et des journaux techniques locaux (modèle, durée, volume de tokens, erreur) ;</li>
+          <li>les réglages de l’extension ;</li>
+          <li>un fichier de sauvegarde, uniquement lorsque l’utilisateur l’exporte.</li>
+        </ul>
+        <p>Ces données peuvent concerner l’utilisateur et d’autres personnes figurant sur la page ou dans un ticket.</p>
+
+        <h2>4. Finalités et bases légales</h2>
+        <ul>
+          <li>Répondre à un message, lister les modèles ou afficher un quota : exécution du service demandé (article 6, paragraphe 1, point b, du RGPD). Au regard de la LPD, il s’agit d’un intérêt prépondérant privé directement lié à ce service.</li>
+          <li>Synchroniser les réglages, et les clés API seulement si cette option est cochée : consentement (article 6, paragraphe 1, point a, du RGPD). La synchronisation est désactivée par défaut. Elle se retire en la désactivant.</li>
+          <li>Autoriser un site ou un serveur d’IA qui n’est pas déjà prévu : consentement, recueilli par le navigateur au moment de la demande.</li>
+        </ul>
+        <p>Ces données ne sont ni vendues, ni utilisées pour de la publicité, ni utilisées pour évaluer la solvabilité ou la capacité de crédit. Personne ne les lit chez le responsable : il n’en a pas de copie.</p>
+        <p>L’utilisation des informations reçues des API Google respecte la politique de données utilisateur du Chrome Web Store, y compris les exigences d’usage limité. <em lang="en">The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</em></p>
+
+        <h2>5. Destinataires</h2>
+        <p>Le responsable n’est pas destinataire des contenus. Selon les réglages, les destinataires sont les suivants.</p>
+        <ul>
+          <li>Le fournisseur d’IA choisi, responsable distinct de son propre traitement : <a href="https://policies.google.com/privacy">Google</a> pour Gemini, <a href="https://openai.com/policies/privacy-policy">OpenAI</a>, <a href="https://openrouter.ai/privacy">OpenRouter</a>, <a href="https://groq.com/privacy-policy">Groq</a>, ou l’exploitant de l’adresse saisie.</li>
+          <li>Google, pour un compte Chrome, ou la Mozilla Foundation, pour un compte Firefox, si la synchronisation est activée. L’historique n’est pas synchronisé. Les clés API ne le sont que si l’option correspondante est cochée.</li>
+          <li>L’instance Freshservice à laquelle l’utilisateur est déjà connecté, pour une saisie de temps ou un changement de statut qu’il confirme. MyBox n’est pas affilié à Freshworks.</li>
+        </ul>
+        <p>La liste des modèles et le quota sont demandés au même fournisseur, avec la clé API, sans le contenu de la page.</p>
+
+        <h2>6. Transferts internationaux</h2>
+        <p>Google, OpenAI, OpenRouter et Groq peuvent traiter les données en dehors de l’Union européenne, de l’Espace économique européen et de la Suisse, notamment aux États-Unis. Le transfert a lieu parce que l’utilisateur a choisi ce fournisseur et a fourni une clé. Les garanties sont celles que ce fournisseur publie, par exemple une certification au Data Privacy Framework UE–États-Unis ou Suisse–États-Unis, ou des clauses contractuelles types.</p>
+        <p>Une adresse personnalisée envoie les données là où se trouve ce serveur. La synchronisation du navigateur peut aussi impliquer un transfert vers l’infrastructure de Google ou de Mozilla.</p>
+
+        <h2>7. Durée de conservation</h2>
+        <p>Sur l’appareil, les données restent jusqu’à l’effacement de l’historique, la suppression des données de l’extension ou sa désinstallation. Le responsable n’en conserve pas de copie. Les fournisseurs, et le cas échéant Google ou Mozilla, appliquent leurs propres durées.</p>
+
+        <h2>8. Sécurité</h2>
+        <p>Les clés API sont conservées dans l’espace de stockage de l’extension. Elles ne sont pas injectées dans la page consultée. Les appels vers les fournisseurs prévus utilisent HTTPS. Une adresse en HTTP simple est signalée, parce que la clé et le contenu y circulent sans chiffrement. Aucun serveur intermédiaire n’est exploité par le responsable.</p>
+
+        <h2>9. Cookies et traceurs</h2>
+        <p>L’extension et cette page n’utilisent pas de cookies, pas de mesure d’audience et pas de publicité.</p>
+        <p>Cette page est hébergée par GitHub Pages. Sa consultation peut être inscrite dans les journaux de GitHub (adresse IP, date et heure), selon la <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">politique de confidentialité de GitHub</a>.</p>
+
+        <h2>10. Données d’autres personnes</h2>
+        <p>Une page ou un ticket peut contenir des données d’autres personnes, y compris des données sensibles au sens du RGPD et de la LPD, par exemple des données de santé. Avant de les transmettre à un fournisseur d’IA, l’utilisateur doit disposer d’une base licite. MyBox ne détecte pas ces données et ne les retire pas.</p>
+
+        <h2>11. Décisions automatisées</h2>
+        <p>MyBox ne prend pas de décision produisant des effets juridiques ou affectant de manière significative la personne concernée, au sens de l’article 22 du RGPD. Le texte produit par le modèle est une proposition. L’utilisateur décide de l’utiliser ou non.</p>
+
+        <h2>12. Vos droits</h2>
+        <p>Dans les conditions prévues par le RGPD et la LPD, vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation, de portabilité et d’opposition, ainsi que du droit de retirer votre consentement.</p>
+        <p>Le responsable ne détenant pas les données, ces droits s’exercent d’abord dans le navigateur : effacer l’historique, désactiver la synchronisation, supprimer les données de l’extension ou la désinstaller. Une demande peut aussi être envoyée à <a href="mailto:apps@cuenat.swiss">apps@cuenat.swiss</a>. S’il n’existe aucune copie, la réponse le constatera.</p>
+        <p>Vous pouvez introduire une réclamation auprès de l’autorité de protection des données de votre pays de résidence dans l’UE ou l’EEE (<a href="https://www.edpb.europa.eu/about-edpb/about-edpb/members_fr">liste du Comité européen de la protection des données</a>). En Suisse, l’autorité compétente est le <a href="https://www.edoeb.admin.ch/fr">Préposé fédéral à la protection des données et à la transparence (PFPDT)</a>.</p>
+
+        <h2>13. Modifications</h2>
+        <p>Si le traitement change, cette page est mise à jour et la date en tête aussi. L’adresse de la page reste celle indiquée sur les fiches du Chrome Web Store et de Firefox Add-ons.</p>
+
+        <footer>MyBox · Politique de confidentialité · <a href="mailto:apps@cuenat.swiss">apps@cuenat.swiss</a></footer>
+      </article>
+
+      <article data-lang="en" data-title="Privacy policy · MyBox">
+        <h1>Privacy policy</h1>
+        <p class="date">Updated on 7 October 2026</p>
+        <p class="lede">This policy describes how the MyBox extension for Chrome and Firefox, and this page, handle personal data. It is written for the General Data Protection Regulation (GDPR) and the Swiss Federal Act on Data Protection (FADP).</p>
+
+        <h2>1. Controller</h2>
+        <p>The controller is Timothy Cuenat, at <a href="mailto:apps@cuenat.swiss">apps@cuenat.swiss</a>.</p>
+        <p>No data protection officer is appointed: the conditions of Article 37 GDPR are not met. No representative in the European Union is appointed. Requests go to the address above.</p>
+        <p>MyBox does not run a server. The controller cannot see the pages you open, tickets, API keys or history.</p>
+
+        <h2>2. Scope</h2>
+        <p>This policy covers the extension and this page. It does not cover the websites you visit, Freshservice, or AI providers: each of them publishes its own policy.</p>
+
+        <h2>3. Data processed</h2>
+        <p>Depending on how you use it, the extension processes:</p>
+        <ul>
+          <li>the message you type;</li>
+          <li>the title, address and text of the open page;</li>
+          <li>a passage you add;</li>
+          <li>on Freshservice, the ticket fields you leave enabled, which may include a name, an email address and the content of a conversation;</li>
+          <li>attached images and files;</li>
+          <li>instructions you wrote for a site;</li>
+          <li>the API key of the provider you chose;</li>
+          <li>conversation history and local technical logs (model, duration, token volume, error);</li>
+          <li>extension settings;</li>
+          <li>a backup file, only when you export one.</li>
+        </ul>
+        <p>This data may relate to you and to other people named on the page or in a ticket.</p>
+
+        <h2>4. Purposes and legal bases</h2>
+        <ul>
+          <li>Answering a message, listing models or showing a quota: performance of the service you requested (Article 6(1)(b) GDPR). Under the FADP, this is an overriding private interest directly linked to that service.</li>
+          <li>Syncing settings, and API keys only if that option is checked: consent (Article 6(1)(a) GDPR). Sync is off by default. You withdraw consent by turning it off.</li>
+          <li>Allowing a site or an AI server that is not already included: consent, collected by the browser when it asks.</li>
+        </ul>
+        <p>This data is not sold, not used for advertising, and not used to assess creditworthiness. No one at the controller reads it: there is no copy to read.</p>
+        <p>The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+
+        <h2>5. Recipients</h2>
+        <p>The controller does not receive the content. Depending on your settings, the recipients are:</p>
+        <ul>
+          <li>The AI provider you chose, a separate controller of its own processing: <a href="https://policies.google.com/privacy">Google</a> for Gemini, <a href="https://openai.com/policies/privacy-policy">OpenAI</a>, <a href="https://openrouter.ai/privacy">OpenRouter</a>, <a href="https://groq.com/privacy-policy">Groq</a>, or the operator of the address you entered.</li>
+          <li>Google, for a Chrome account, or the Mozilla Foundation, for a Firefox account, if sync is on. History is not synced. API keys are synced only if that option is checked.</li>
+          <li>The Freshservice instance you are already signed in to, for a time entry or a status change you confirm. MyBox is not affiliated with Freshworks.</li>
+        </ul>
+        <p>The model list and the quota are requested from the same provider, with the API key, without the page content.</p>
+
+        <h2>6. International transfers</h2>
+        <p>Google, OpenAI, OpenRouter and Groq may process data outside the European Union, the European Economic Area and Switzerland, including in the United States. The transfer happens because you chose that provider and supplied a key. The safeguards are those the provider publishes, for example certification under the EU–US or Swiss–US Data Privacy Framework, or standard contractual clauses.</p>
+        <p>A custom address sends data to wherever that server is. Browser sync may also involve a transfer to Google’s or Mozilla’s infrastructure.</p>
+
+        <h2>7. Retention</h2>
+        <p>On the device, data stays until you clear the history, delete the extension’s data, or uninstall it. The controller keeps no copy. Providers and, where relevant, Google or Mozilla apply their own retention periods.</p>
+
+        <h2>8. Security</h2>
+        <p>API keys are stored in the extension’s storage. They are not injected into the page you are viewing. Calls to the built-in providers use HTTPS. A plain HTTP address is flagged, because the key and the content then travel unencrypted. The controller does not operate an intermediary server.</p>
+
+        <h2>9. Cookies and trackers</h2>
+        <p>The extension and this page do not use cookies, audience measurement or advertising.</p>
+        <p>This page is hosted on GitHub Pages. A visit may be written to GitHub’s logs (IP address, date and time), under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s privacy statement</a>.</p>
+
+        <h2>10. Other people’s data</h2>
+        <p>A page or a ticket may contain other people’s data, including special-category data under the GDPR and the FADP, such as health data. Before sending it to an AI provider, you need a lawful basis. MyBox does not detect or remove that data.</p>
+
+        <h2>11. Automated decisions</h2>
+        <p>MyBox does not make a decision that produces legal effects or similarly significantly affects a person, within the meaning of Article 22 GDPR. Text from the model is a suggestion. You decide whether to use it.</p>
+
+        <h2>12. Your rights</h2>
+        <p>Under the GDPR and the FADP, you have the right of access, rectification, erasure, restriction, portability and objection, and the right to withdraw consent.</p>
+        <p>Because the controller does not hold the data, you exercise these rights first in the browser: clear the history, turn sync off, delete the extension’s data, or uninstall it. You may also write to <a href="mailto:apps@cuenat.swiss">apps@cuenat.swiss</a>. If no copy exists, the reply will say so.</p>
+        <p>You may lodge a complaint with the data protection authority of your country of residence in the EU or the EEA (<a href="https://www.edpb.europa.eu/about-edpb/about-edpb/members_en">list of the European Data Protection Board</a>). In Switzerland, the authority is the <a href="https://www.edoeb.admin.ch/en">Federal Data Protection and Information Commissioner (FDPIC)</a>.</p>
+
+        <h2>13. Changes</h2>
+        <p>If the processing changes, this page is updated, and so is the date above. The address of the page remains the one shown on the Chrome Web Store and Firefox Add-ons listings.</p>
+
+        <footer>MyBox · Privacy policy · <a href="mailto:apps@cuenat.swiss">apps@cuenat.swiss</a></footer>
+      </article>
+
+      <article data-lang="de" data-title="Datenschutzerklärung · MyBox">
+        <h1>Datenschutz&shy;erklärung</h1>
+        <p class="date">Aktualisiert am 7. Oktober 2026</p>
+        <p class="lede">Diese Erklärung beschreibt die Datenbearbeitungen der Erweiterung MyBox für Chrome und Firefox und dieser Seite. Sie ist auf die Datenschutz-Grundverordnung (DSGVO) und auf das schweizerische Datenschutzgesetz (DSG) ausgerichtet.</p>
+
+        <h2>1. Verantwortlicher</h2>
+        <p>Verantwortlicher ist Timothy Cuenat, erreichbar unter <a href="mailto:apps@cuenat.swiss">apps@cuenat.swiss</a>.</p>
+        <p>Es ist kein Datenschutzbeauftragter benannt: die Voraussetzungen von Artikel 37 DSGVO sind nicht erfüllt. Es ist kein Vertreter in der Europäischen Union benannt. Anfragen gehen an die oben genannte Adresse.</p>
+        <p>MyBox betreibt keinen Server. Der Verantwortliche hat keinen Zugriff auf besuchte Seiten, Tickets, API-Schlüssel oder den Verlauf.</p>
+
+        <h2>2. Geltungsbereich</h2>
+        <p>Diese Erklärung gilt für die Erweiterung und für diese Seite. Sie gilt nicht für besuchte Websites, Freshservice oder KI-Anbieter: jeder veröffentlicht seine eigene Erklärung.</p>
+
+        <h2>3. Bearbeitete Daten</h2>
+        <p>Je nach Nutzung bearbeitet die Erweiterung:</p>
+        <ul>
+          <li>die eingegebene Nachricht;</li>
+          <li>Titel, Adresse und Text der geöffneten Seite;</li>
+          <li>eine von Ihnen hinzugefügte Stelle;</li>
+          <li>bei Freshservice die aktiv gelassenen Ticketfelder, die einen Namen, eine E-Mail-Adresse und den Inhalt eines Austauschs enthalten können;</li>
+          <li>angehängte Bilder und Dateien;</li>
+          <li>Anweisungen, die Sie für eine Website verfasst haben;</li>
+          <li>den API-Schlüssel des gewählten Anbieters;</li>
+          <li>den Gesprächsverlauf und lokale technische Protokolle (Modell, Dauer, Tokenmenge, Fehler);</li>
+          <li>die Einstellungen der Erweiterung;</li>
+          <li>eine Sicherungsdatei, nur wenn Sie sie exportieren.</li>
+        </ul>
+        <p>Diese Daten können Sie und andere Personen betreffen, die auf der Seite oder im Ticket genannt sind.</p>
+
+        <h2>4. Zwecke und Rechtsgrundlagen</h2>
+        <ul>
+          <li>Eine Nachricht beantworten, Modelle auflisten oder ein Kontingent anzeigen: Erfüllung des verlangten Dienstes (Artikel 6 Absatz 1 Buchstabe b DSGVO). Nach dem DSG liegt ein überwiegendes privates Interesse vor, das unmittelbar mit diesem Dienst zusammenhängt.</li>
+          <li>Einstellungen synchronisieren, und API-Schlüssel nur wenn diese Option aktiviert ist: Einwilligung (Artikel 6 Absatz 1 Buchstabe a DSGVO). Die Synchronisierung ist standardmäßig aus. Sie widerrufen die Einwilligung, indem Sie sie ausschalten.</li>
+          <li>Eine Website oder einen KI-Server zulassen, der nicht bereits vorgesehen ist: Einwilligung, die der Browser im Zeitpunkt der Anfrage einholt.</li>
+        </ul>
+        <p>Diese Daten werden nicht verkauft, nicht für Werbung verwendet und nicht zur Beurteilung der Kreditwürdigkeit genutzt. Beim Verantwortlichen liest sie niemand: es gibt keine Kopie.</p>
+        <p>Die Nutzung der von Google-APIs erhaltenen Informationen entspricht der Nutzerdatenrichtlinie des Chrome Web Store, einschliesslich der Limited-Use-Anforderungen. <em lang="en">The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</em></p>
+
+        <h2>5. Empfänger</h2>
+        <p>Der Verantwortliche ist nicht Empfänger der Inhalte. Je nach Einstellungen sind Empfänger:</p>
+        <ul>
+          <li>Der von Ihnen gewählte KI-Anbieter, als eigener Verantwortlicher seiner Bearbeitung: <a href="https://policies.google.com/privacy">Google</a> für Gemini, <a href="https://openai.com/policies/privacy-policy">OpenAI</a>, <a href="https://openrouter.ai/privacy">OpenRouter</a>, <a href="https://groq.com/privacy-policy">Groq</a> oder der Betreiber der eingegebenen Adresse.</li>
+          <li>Google bei einem Chrome-Konto oder die Mozilla Foundation bei einem Firefox-Konto, wenn die Synchronisierung aktiv ist. Der Verlauf wird nicht synchronisiert. API-Schlüssel nur, wenn die entsprechende Option aktiviert ist.</li>
+          <li>Die Freshservice-Instanz, bei der Sie bereits angemeldet sind, für eine Zeitbuchung oder eine Statusänderung, die Sie bestätigen. MyBox ist nicht mit Freshworks verbunden.</li>
+        </ul>
+        <p>Die Modellliste und das Kontingent werden beim selben Anbieter abgefragt, mit dem API-Schlüssel, ohne den Seiteninhalt.</p>
+
+        <h2>6. Internationale Übermittlungen</h2>
+        <p>Google, OpenAI, OpenRouter und Groq können Daten ausserhalb der Europäischen Union, des Europäischen Wirtschaftsraums und der Schweiz bearbeiten, namentlich in den Vereinigten Staaten. Die Übermittlung erfolgt, weil Sie diesen Anbieter gewählt und einen Schlüssel hinterlegt haben. Die Garantien sind die vom Anbieter veröffentlichten, zum Beispiel eine Zertifizierung unter dem EU-US- oder dem Swiss-US Data Privacy Framework oder Standardvertragsklauseln.</p>
+        <p>Eine eigene Adresse sendet die Daten dorthin, wo dieser Server steht. Die Browser-Synchronisierung kann ebenfalls eine Übermittlung an die Infrastruktur von Google oder Mozilla bedeuten.</p>
+
+        <h2>7. Aufbewahrung</h2>
+        <p>Auf dem Gerät bleiben die Daten, bis Sie den Verlauf löschen, die Daten der Erweiterung entfernen oder sie deinstallieren. Der Verantwortliche behält keine Kopie. Die Anbieter und gegebenenfalls Google oder Mozilla wenden ihre eigenen Fristen an.</p>
+
+        <h2>8. Sicherheit</h2>
+        <p>API-Schlüssel liegen im Speicher der Erweiterung. Sie werden nicht in die angesehene Seite eingesetzt. Aufrufe an die vorgesehenen Anbieter erfolgen über HTTPS. Eine reine HTTP-Adresse wird gekennzeichnet, weil Schlüssel und Inhalt dann unverschlüsselt übertragen werden. Der Verantwortliche betreibt keinen zwischengeschalteten Server.</p>
+
+        <h2>9. Cookies und Tracker</h2>
+        <p>Die Erweiterung und diese Seite verwenden keine Cookies, keine Reichweitenmessung und keine Werbung.</p>
+        <p>Diese Seite wird über GitHub Pages bereitgestellt. Ein Aufruf kann in den Protokollen von GitHub festgehalten werden (IP-Adresse, Datum und Uhrzeit), gemäss der <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">Datenschutzerklärung von GitHub</a>.</p>
+
+        <h2>10. Daten anderer Personen</h2>
+        <p>Eine Seite oder ein Ticket kann Daten anderer Personen enthalten, einschliesslich besonders schützenswerter Daten im Sinne der DSGVO und des DSG, etwa Gesundheitsdaten. Bevor Sie sie an einen KI-Anbieter übermitteln, brauchen Sie eine zulässige Grundlage. MyBox erkennt diese Daten nicht und entfernt sie nicht.</p>
+
+        <h2>11. Automatisierte Entscheidungen</h2>
+        <p>MyBox trifft keine Entscheidung, die rechtliche Wirkung entfaltet oder die betroffene Person in ähnlicher Weise erheblich beeinträchtigt, im Sinne von Artikel 22 DSGVO. Der Text des Modells ist ein Vorschlag. Sie entscheiden, ob Sie ihn verwenden.</p>
+
+        <h2>12. Ihre Rechte</h2>
+        <p>Nach Massgabe der DSGVO und des DSG haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch sowie das Recht, eine Einwilligung zu widerrufen.</p>
+        <p>Da der Verantwortliche die Daten nicht besitzt, üben Sie diese Rechte zuerst im Browser aus: Verlauf löschen, Synchronisierung ausschalten, Daten der Erweiterung entfernen oder sie deinstallieren. Eine Anfrage kann auch an <a href="mailto:apps@cuenat.swiss">apps@cuenat.swiss</a> gehen. Gibt es keine Kopie, hält die Antwort das fest.</p>
+        <p>Sie können bei der Datenschutzbehörde Ihres Wohnsitzstaates in der EU oder im EWR Beschwerde einlegen (<a href="https://www.edpb.europa.eu/about-edpb/about-edpb/members_de">Liste des Europäischen Datenschutzausschusses</a>). In der Schweiz ist der <a href="https://www.edoeb.admin.ch/de">Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte (EDÖB)</a> zuständig.</p>
+
+        <h2>13. Änderungen</h2>
+        <p>Ändert sich die Bearbeitung, wird diese Seite aktualisiert, und das Datum oben ebenfalls. Die Adresse der Seite bleibt diejenige, die in den Einträgen des Chrome Web Store und von Firefox Add-ons steht.</p>
+
+        <footer>MyBox · Datenschutzerklärung · <a href="mailto:apps@cuenat.swiss">apps@cuenat.swiss</a></footer>
+      </article>
+
+    </div>
+    <script>
+      (function () {
+        var titles = {
+          fr: "Politique de confidentialité · MyBox",
+          en: "Privacy policy · MyBox",
+          de: "Datenschutzerklärung · MyBox",
+        };
+        var descriptions = {
+          fr: "Politique de confidentialité de l’extension MyBox, au regard du RGPD et de la LPD suisse.",
+          en: "Privacy policy for the MyBox extension, under the GDPR and the Swiss FADP.",
+          de: "Datenschutzerklärung der Erweiterung MyBox, nach DSGVO und schweizerischem DSG.",
+        };
+
+        function apply(lang, writeHash) {
+          if (lang !== "en" && lang !== "de") lang = "fr";
+          document.documentElement.lang = lang;
+          document.documentElement.dataset.lang = lang;
+          document.title = titles[lang];
+          var meta = document.querySelector('meta[name="description"]');
+          if (meta) meta.setAttribute("content", descriptions[lang]);
+          document.querySelectorAll("nav button").forEach(function (button) {
+            if (button.getAttribute("data-set") === lang) button.setAttribute("aria-current", "true");
+            else button.removeAttribute("aria-current");
+          });
+          if (!writeHash) return;
+          var next = lang === "fr" ? location.pathname + location.search : "#" + lang;
+          if ((lang === "fr" && location.hash) || (lang !== "fr" && location.hash !== "#" + lang)) {
+            history.replaceState(null, "", next);
+          }
+        }
+
+        document.querySelectorAll("nav button").forEach(function (button) {
+          button.addEventListener("click", function () {
+            apply(button.getAttribute("data-set"), true);
+          });
+        });
+
+        window.addEventListener("hashchange", function () {
+          apply((location.hash || "#fr").slice(1), false);
+        });
+
+        apply((location.hash || "#fr").slice(1), false);
+      })();
+    </script>
+  </body>
+</html>
